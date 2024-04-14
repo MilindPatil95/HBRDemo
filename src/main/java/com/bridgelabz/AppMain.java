@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -67,6 +68,15 @@ public class AppMain {
 		Query query = session.createQuery("from Alian");
 
 		System.out.println(query.list());
+		
+		// create criteria
+		
+		
+		Criteria c=session.createCriteria(Alian.class);
+		 c.setFirstResult(0);
+		 c.setMaxResults(2);
+		 
+		 System.out.println("result------------->>   "+c.list());
 
 	}
 
