@@ -70,8 +70,7 @@ public class AppMain {
 		System.out.println(query.list());
 		
 		// create criteria
-		
-		
+			
 		Criteria c=session.createCriteria(Alian.class);
 		 c.setFirstResult(0);
 		 c.setMaxResults(2);
