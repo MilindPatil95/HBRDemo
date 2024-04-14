@@ -67,6 +67,8 @@ public class AppMain {
 		Query query = session.createQuery("from Alian");
 
 		System.out.println(query.list());
+		
+		System.out.println("check conflict");
 
 	}
 
