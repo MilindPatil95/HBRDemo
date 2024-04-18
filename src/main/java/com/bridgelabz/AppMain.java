@@ -64,11 +64,20 @@ public class AppMain {
 
 		txn.commit();
 
-		Query query = session.createQuery("from Alian");
+		session.close();
+
+		Session session2 = sf.openSession();
+
+		Query query = session2.createQuery("from Alian");
 
 		System.out.println(query.list());
+
+		// System.out.println("check conflict");
+		System.out.println(" Start fetch record from cache");
 		
-		System.out.println("check conflict");
+	    Alian alia2=   	(Alian) session2.get(Alian.class, 102);
+	    
+	    System.out.println(" End fetch record from cache --->>>>>>  "+ alia2);
 
 	}
 
